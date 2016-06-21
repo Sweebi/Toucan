@@ -478,7 +478,7 @@ public class Toucan : NSObject {
     /**
     Container struct for internally used utility functions.
     */
-    internal struct Util {
+    public struct Util {
         
         /**
         Get the CGImage of the image with the orientation fixed up based on EXF data.
@@ -577,7 +577,7 @@ public class Toucan : NSObject {
         
         - returns: Resized and cropped image
         */
-        static func croppedImageWithRect(image: UIImage, rect: CGRect) -> UIImage {
+        public static func croppedImageWithRect(image: UIImage, rect: CGRect) -> UIImage {
             return drawImageWithClosure(size: rect.size) { (size: CGSize, context: CGContext) -> () in
                 let drawRect = CGRectMake(-rect.origin.x, -rect.origin.y, image.size.width, image.size.height)
                 CGContextClipToRect(context, CGRectMake(0, 0, rect.size.width, rect.size.height))
